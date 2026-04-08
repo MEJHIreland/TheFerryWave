@@ -1,0 +1,33 @@
+name: Scrape Dublin Port Ferries
+
+on:
+  schedule:
+    - cron: "0 6 * * *" # Every day at 6am UTC
+  workflow_dispatch:     # Allows manual run
+
+jobs:
+  scrape:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "18"
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run scraper
+        run: node scraper.js
+
+      - name: Commit updated JSON
+        run: |
+          git config user.name "github-actions"
+          git config user.email "actions@github.com"
+          git add arrivals.json
+          git commit -m "Update arrivals.json" || echo "No changes"
+          git push
