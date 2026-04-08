@@ -1,1 +1,26 @@
-
+[
+  {
+    "date": "08/04/2026",
+    "time": "06:00",
+    "vessel": "Stena Adventurer",
+    "type": "Ferry",
+    "berth": "Terminal 2",
+    "origin": "Holyhead"
+  },
+  {
+    "date": "08/04/2026",
+    "time": "07:30",
+    "vessel": "Epsilon",
+    "type": "Ro-Ro Cargo",
+    "berth": "Berth 49",
+    "origin": "Liverpool"
+  },
+  {
+    "date": "08/04/2026",
+    "time": "09:15",
+    "vessel": "MSC Example",
+    "type": "Container",
+    "berth": "Berth 30",
+    "origin": "Rotterdam"
+  }
+]
